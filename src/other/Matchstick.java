@@ -16,10 +16,10 @@ import java.util.Scanner;
  * 7+2=9
  * 10+1=11
  * 11+0=11
- *
+ * 题目：m<=24根火柴棍，求可以构造出多少个满足A+B=C的等式，其中=和+各需2根火柴棍
  * 效果很慢...
  */
-public class 火柴棍 {
+public class Matchstick {
 
     // 计算当前的数字要多少火柴棍
     public static int calc(int x) {
@@ -53,7 +53,7 @@ public class 火柴棍 {
             }
         }
         System.out.println("可以拼出.." + sum);
-        System.out.println(System.currentTimeMillis()-start);
+        System.out.println(System.currentTimeMillis() - start);
         return;
     }
 }
