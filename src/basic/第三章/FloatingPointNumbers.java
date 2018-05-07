@@ -16,7 +16,10 @@ import java.util.Scanner;
  */
 public class FloatingPointNumbers {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner read  = new Scanner(System.in);
+        String str  = null;
+        while(!(str = read.nextLine()).equals("0e0")){
 
+        }
     }
 }
