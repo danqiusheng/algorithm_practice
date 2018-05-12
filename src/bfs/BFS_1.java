@@ -102,9 +102,9 @@ public class BFS_1 {
 
         System.out.println("(" + que[tail - 1].x + "," + que[tail - 1].y + ")");
         int index = tail - 1;
-        Node parent = que[que[tail-1].parent];
-        Node current =  que[tail - 1];
-        while (current.x!=startx&&current.y != starty) {
+        Node parent = que[que[tail - 1].parent];
+        Node current = que[tail - 1];
+        while (current.x != startx && current.y != starty) {
             System.out.println("(" + parent.x + "," + parent.y + ")");
             //System.out.println(que[tail-1].step);
             current = parent;
@@ -113,52 +113,54 @@ public class BFS_1 {
         }
         System.out.println("(" + parent.x + "," + parent.y + ")");
     }
+
+    /**
+     * Queue
+     * 队列进栈对象
+     */
+
+    static class Node {
+        int x;
+        int y;
+        int parent = -1;
+        int step;
+
+        public int getX() {
+            return x;
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public int getY() {
+            return y;
+        }
+
+        public void setY(int y) {
+            this.y = y;
+        }
+
+        public int getStep() {
+            return step;
+        }
+
+        public void setStep(int step) {
+            this.step = step;
+        }
+
+        public int getParent() {
+            return parent;
+        }
+
+        public void setParent(int parent) {
+            this.parent = parent;
+        }
+
+        @Override
+        public String toString() {
+            return "(" + x + "," + y + ")";
+        }
+    }
 }
 
-/**
- * Queue
- * 队列进栈对象
- */
-class Node {
-    int x;
-    int y;
-    int parent = -1;
-    int step;
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public int getStep() {
-        return step;
-    }
-
-    public void setStep(int step) {
-        this.step = step;
-    }
-
-    public int getParent() {
-        return parent;
-    }
-
-    public void setParent(int parent) {
-        this.parent = parent;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + "," + y + ")";
-    }
-}

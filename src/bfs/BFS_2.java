@@ -5,6 +5,9 @@ import java.util.Queue;
 
 /**
  * Created by Administrator on 2018/3/25.
+ * 基本的广搜示例
+ *
+ * @author danqiusheng
  */
 public class BFS_2 {
     private int r = 4;//行
