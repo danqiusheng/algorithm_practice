@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * 迷宫 广搜
- * 其内部实现用的是先进先出的栈
+ * 其内部实现用的是先进先出的队列
  * 两个点，求最短的路径
  *
  * @author 丹丘生
@@ -116,7 +116,7 @@ public class BFS_1 {
 
     /**
      * Queue
-     * 队列进栈对象
+     * 队列对象
      */
 
     static class Node {
