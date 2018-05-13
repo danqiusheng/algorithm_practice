@@ -6,10 +6,33 @@ import java.util.Scanner;
 
 /**
  * 迷宫 广搜
- * 其内部实现用的是先进先出的栈
+ * 其内部实现用的是先进先出的队列
  * 两个点，求最短的路径
- *
- * @author 丹丘生
+ 输入：
+ 5 4
+ 0 0 1 0
+ 0 0 0 0
+ 0 0 1 0
+ 0 1 0 0
+ 0 0 0 1
+ 0 0 3 2
+输出：（没有障碍）
+ (3,2)
+ (2,2)
+ (1,2)
+ (0,2)
+ (0,1)
+ (0,0)
+ 输出：（有障碍）
+ (3,2)
+ (3,3)
+ (2,3)
+ (1,3)
+ (1,2)
+ (1,1)
+ (0,1)
+ (0,0)
+ * @author danqiusheng
  */
 public class BFS_3 {
     private static int[][] direction = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -27,8 +50,6 @@ public class BFS_3 {
 
     public static void main(String[] args) {
         // 设置头
-
-
         Scanner read = new Scanner(System.in);
 
         n = read.nextInt();
@@ -110,7 +131,7 @@ public class BFS_3 {
 
     /**
      * Queue
-     * 队列进栈对象
+     * 队列对象
      */
 
     static class Node {
