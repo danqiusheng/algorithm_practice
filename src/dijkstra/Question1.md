@@ -10,4 +10,4 @@ Dijkstra算法练习 --简单
 
 2.[练习题2](http://poj.org/problem?id=1502])
 这题需要理清楚题意，然后才开始动手。
-参考代码：[DijkstraDemo3]()
+参考代码：[DijkstraDemo3](https://github.com/danqiusheng/algorithm_practice/blob/master/src/dijkstra/DijkstraDemo3.java)
