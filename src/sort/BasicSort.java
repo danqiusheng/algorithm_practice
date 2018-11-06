@@ -14,7 +14,7 @@ public class BasicSort {
     // 待排序数组
     static int[] arr = {2, 3, 12, 313, 5435, 1, 5, 33, 246, 99};
     static int[] array = {2, 36, 12, 313, 5435, 1, 5, 33, 246, 99};
-    static int[] number = {2, 38,12, 313, 5435, 1, 5, 33, 246, 99};
+    static int[] number = {2, 38, 12, 313, 5435, 1, 5, 33, 246, 99};
 
     public static void main(String[] args) {
         bubbleSort(arr);
@@ -40,14 +40,18 @@ public class BasicSort {
 
     // 选择排序
     public static void selectSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        int min;
+        for (int i = 0; i < arr.length - 1; i++) {
+            min = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[min] > arr[j]) {// 找出比min下标对应的数据还小的数据
+                    min = j;
                 }
             }
+            // 交换一次
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
         }
     }
 
@@ -55,17 +59,15 @@ public class BasicSort {
     // 插入排序
     //static int[] number = {2, 38,12, 313, 5435, 1, 5, 33, 246, 99};
     public static void insertSort(int[] number) {
+        //
         for (int i = 1; i < number.length; i++) {
-            int tmp = number[i]; //38
-            int j = i - 1; //0
-            while (tmp < number[j]) {
-                number[j + 1] = number[j];
+            int tmp = number[i]; //
+            int j = i; // 1
+            while (j > 0 && tmp < number[j - 1]) {
+                number[j] = number[j - 1];
                 j--;
-                if (j == -1) break;
             }
-            number[j + 1] = tmp;
+            number[j] = tmp;
         }
     }
-
-
 }
