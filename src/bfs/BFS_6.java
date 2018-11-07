@@ -1,6 +1,5 @@
 package bfs;
 
-import javax.management.Query;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
