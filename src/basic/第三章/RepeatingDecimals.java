@@ -22,26 +22,44 @@ public class RepeatingDecimals {
         Scanner read = new Scanner(System.in);
         int a = read.nextInt();
         int b = read.nextInt();
-
+        // 得商
         int x = a / b;
-        int temp = a % b * 10;
+        // 得余数
+        int temp = a % b; // temp变量用于标记循环小数的开始， 在temp之前的都不是循环小数
+        // 得到剩余待除
+        a = a % b * 10;
 
         int index = 0;
-
-        while (tep[temp] == 0) {
-            int yu = temp / b;
-            tep[temp] = 1;
-            arr[index++] = yu;
-            temp = temp % b * 10;
+        while (tep[temp] == 0) {    // 如果当前的余数没有相同的
+            int yu = a / b;         // 得商
+            arr[++index] = yu;      // 存储该商
+            tep[temp] = index;      // 存储余数的下标
+            temp = a % b;           // 得余数
+            a = a % b * 10;         // 得到剩余待除
         }
 
 
-        System.out.print(x+".(");
-        for (int i = 0; i < index; i++) {
+        //arr[1]=1 arr[2]=6
+        //temp[1]= 1 temp[4]=2
+        //temp=4  index=2
+        System.out.print(x + ".");
+        if (a == 0) {// 如果被整除
+            for (int i = 1; i < index; i++)
+                System.out.print(arr[i]);
+            System.out.println("(0)");
+            System.out.println(1);
+            return;
+        }
+
+        // 如果没有整除
+        for (int i = 1; i < tep[temp]; i++) { // 在之前的不是循环小数
+            System.out.print(arr[i]);
+        }
+        System.out.print("(");
+        for (int i = tep[temp]; i <= index && i <= tep[temp] + 100; i++) {
             System.out.print(arr[i]);
         }
         System.out.println(")");
-
-        System.out.println(index);
+        System.out.println(index - tep[temp] + 1);
     }
 }
